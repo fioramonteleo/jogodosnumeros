@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --wood-dark: #38251b;
+  --wood-medium: #68452f;
+  --caramel: #a8794d;
+  --paper-beige: #e8d8b9;
+  --cream: #f4ebdd;
+  --olive: #69734a;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--wood-dark);
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(168, 121, 77, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(105, 115, 74, 0.07) 0%, transparent 45%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(104, 69, 47, 0.018) 0px,
+      rgba(104, 69, 47, 0.018) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  min-height: 100vh;
+}
+
+/* Textura sutil de placa de madeira */
+.wood-plaque {
+  background: linear-gradient(135deg, #523626 0%, #68452f 48%, #4d3223 100%);
+  border: 2px solid #38251b;
+  box-shadow:
+    inset 0 1px 0 rgba(232, 216, 185, 0.22),
+    inset 0 -2px 0 rgba(30, 18, 12, 0.45),
+    0 6px 16px rgba(56, 37, 27, 0.22);
+}
+
+/* Textura sutil de papel antigo */
+.paper-card {
+  background: linear-gradient(180deg, #f8f1e5 0%, #efe2ca 100%);
+  border: 1.5px solid #c5a882;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 4px 14px rgba(56, 37, 27, 0.1);
+}
+
+/* Botão artesanal de madeira */
+.wood-btn {
+  background: linear-gradient(180deg, #7a5238 0%, #5c3c28 100%);
+  color: #f4ebdd;
+  border: 1.5px solid #38251b;
+  box-shadow:
+    inset 0 1px 0 rgba(244, 235, 221, 0.25),
+    0 3px 0 #38251b,
+    0 5px 10px rgba(56, 37, 27, 0.2);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.15s ease;
+}
+
+.wood-btn:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.wood-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 235, 221, 0.2),
+    0 1px 0 #38251b,
+    0 2px 4px rgba(56, 37, 27, 0.2);
+}
+
+.wood-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Botão verde oliva artesanal */
+.olive-btn {
+  background: linear-gradient(180deg, #778255 0%, #5b643f 100%);
+  color: #f4ebdd;
+  border: 1.5px solid #3f462b;
+  box-shadow:
+    inset 0 1px 0 rgba(244, 235, 221, 0.25),
+    0 3px 0 #3f462b,
+    0 5px 10px rgba(56, 37, 27, 0.18);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.15s ease;
+}
+
+.olive-btn:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.olive-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 235, 221, 0.2),
+    0 1px 0 #3f462b;
+}
+
+/* Régua de madeira artesanal */
+.wooden-ruler-track {
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(56, 37, 27, 0.08) 0px,
+      rgba(56, 37, 27, 0.08) 1px,
+      transparent 1px,
+      transparent 16px
+    ),
+    linear-gradient(180deg, #cfa675 0%, #b78854 55%, #9f703f 100%);
+  border: 2px solid #5c3c28;
+  box-shadow:
+    inset 0 2px 4px rgba(56, 37, 27, 0.22),
+    0 3px 8px rgba(56, 37, 27, 0.14);
+}
+
+@keyframes floatConfetti {
+  0% {
+    transform: translateY(-12px) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(130px) rotate(220deg);
+    opacity: 0;
+  }
+}
+
+.confetti-piece {
+  animation: floatConfetti 2.8s ease-in-out infinite;
+}
